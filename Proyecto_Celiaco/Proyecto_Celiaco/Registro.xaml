@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Celiaco.Registro"
+             BackgroundImageSource="backgroud.jpg"
+             >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="20">
+
+            <Label Text="Registrese" FontFamily="3d" FontSize="Large"></Label>
+
+
+
+
+            <Label Text="ingrese su correo" TextColor="White" FontSize="Large"></Label>
+            <Entry  x:Name="txtboxcorreo" TextColor="White"></Entry>
+
+            <Label Text="ingrese un nombre de usuario" TextColor="White" FontSize="Large"></Label>
+            <Entry x:Name="txtboxusuario" TextColor="White"></Entry>
+
+            <Label Text="ingrese una contraseña" TextColor="White" FontSize="Large"></Label>
+            <Entry x:Name="txtboxcontraseña" TextColor="White" ></Entry>
+
+            <Button Text="registrar" x:Name="btninsertarregistro" Clicked="btninsertarregistro_Clicked"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

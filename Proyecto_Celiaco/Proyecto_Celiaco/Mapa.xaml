@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:local="clr-namespace:Proyecto_Celiaco.card"
+             x:Class="Proyecto_Celiaco.Mapa"
+             IconImageSource="lupa.png">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Picker x:Name="pkOpciones" Title="Filtrar por..." SelectedIndexChanged="pkOpciones_SelectedIndexChanged"/>
+            <!--<Label Text="ubicacion"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry Text="Nombre Ubicacion" x:Name="TxtNombreUbicacion"></Entry>
+            <Label Text="Latitud" Margin=" 0,20,0,0"></Label>
+            <Entry Text="-24.7874999" Keyboard="Numeric" x:Name="TxtLatitud"></Entry>
+            <Label Text="Longitud" Margin=" 0,20,0,0"></Label>
+            <Entry Text="-65.428955" Keyboard="Numeric" x:Name="TxtLongitud"></Entry>
+            <Button Text="CARGAR" x:Name="btnAbrir" Clicked="btnAbrir_Clicked"></Button>-->
+            <ScrollView>
+                <ListView ItemsSource = "{Binding list_direcciones}"  HasUnevenRows="True" ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped" x:Name="lv_lista">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:CardViewTemplate/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

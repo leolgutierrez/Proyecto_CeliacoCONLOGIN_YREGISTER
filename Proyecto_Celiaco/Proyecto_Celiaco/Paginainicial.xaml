@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Celiaco.Paginainicial"
+              BackgroundImageSource="backgroud.jpg"
+             >
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="20">
+
+            <Label Text="App recetas" Margin="0,120,0,0" FontFamily="3d" FontSize="50" TextColor="White"></Label>
+
+            <Button Text="Press start" Margin="0,120,0,0" x:Name="botonstart" Clicked="botonstart_Clicked" ></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

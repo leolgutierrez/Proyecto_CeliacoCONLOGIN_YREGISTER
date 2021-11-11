@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Proyecto_Celiaco.card.CardViewTemplate">
+  <ContentView.Content>
+        <Frame IsClippedToBounds="True"  
+           HasShadow="True"  
+           Padding="0"  
+           BackgroundColor="White" >
+            <Frame.OutlineColor>
+                <OnPlatform x:TypeArguments="Color"  
+                    Android="Gray"  
+                    iOS="Gray"/>
+            </Frame.OutlineColor>
+            <Frame.Margin>
+                <OnPlatform x:TypeArguments="Thickness"  
+                     Android="10"   
+                     iOS="10"/>
+            </Frame.Margin>
+            <StackLayout Orientation="Horizontal">
+                <BoxView Color="{Binding color_local}" WidthRequest="6"/>
+                <Grid VerticalOptions="CenterAndExpand"  
+                 Padding="0"  
+                 HorizontalOptions="FillAndExpand"  
+                 BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label FontAttributes="Bold"  
+                   Grid.Row="0"  
+                   HorizontalTextAlignment="Start"  
+                   VerticalTextAlignment="Center"  
+                   FontSize="16"  TextColor="Black" d:FontAttributes="Bold"
+                   Text="{Binding nombre}">
+                        <Label.LineBreakMode>
+                            <OnPlatform x:TypeArguments="LineBreakMode"  
+                          Android="NoWrap"   
+                          iOS="TailTruncation"/>
+                        </Label.LineBreakMode>
+                    </Label>
+                    <BoxView Grid.Row="1" Color="Gray"  
+                    HorizontalOptions="FillAndExpand"  
+                    HeightRequest="1"/>
+                    <Grid Grid.Row="2">
+                        <Label Grid.Row="0"  
+                          Grid.Column="0"  
+                          Text="{Binding direccion}" TextColor="Black"/>
+                    </Grid>
+                    <Grid Grid.Row="3"  
+                   BackgroundColor="Transparent"  
+                   Padding="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0"  
+                          Grid.Column="0"  
+                          Text="{Binding tipo_local}" TextColor="Gray"/>
+                        <Label Grid.Row="0"  
+                          Grid.Column="4"  
+                          Text="Ir al mapa" TextColor="LightGray"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
