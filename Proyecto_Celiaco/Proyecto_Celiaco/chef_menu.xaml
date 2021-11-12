@@ -9,6 +9,7 @@
     <local:Mapa/>
     <local:chef></local:chef>
     <local:ListaFavoritos/>
+    <local:Opciones/>
 
 
 </TabbedPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Proyecto_Celiaco.card_recetas"
+             x:Class="Proyecto_Celiaco.Dificultad">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="¡Seleccione la dificultad!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <Label Text="Puede seleccionar la dificultad según el tiempo que disponga para crear un platillo delicioso." FontSize="Subtitle"/>
+            <ScrollView>
+                <ListView ItemsSource = "{Binding lista_dif}"  HasUnevenRows="True"  x:Name="lv_lista" ItemSelected="lv_lista_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:dificultad_viewtemp/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

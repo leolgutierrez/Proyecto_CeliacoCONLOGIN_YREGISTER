@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Celiaco.Opciones"
+             IconImageSource="opc.png">
+    <ContentPage.Content>
+        <StackLayout Margin="10,10,10,10" Padding="10,10,10,10">
+            <Label Text="¡Bienvenido a la app de cocina!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title"/>
+            <Button Text="Iniciar Sesión" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

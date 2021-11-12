@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Celiaco.ing_filtro">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="¡Es Hora de los ingredientes!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <Label Text="Seleccione con que ingredientes cuenta para que podamos sugerir las mejores recetas para usted!" FontSize="Subtitle" VerticalOptions="Start"/>
+            <Frame>
+                <Label Text="Los ingredientes que tengo son:" FontSize="Medium"/>
+            </Frame>
+            <Button Clicked="Button_Clicked" Text="Volver"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

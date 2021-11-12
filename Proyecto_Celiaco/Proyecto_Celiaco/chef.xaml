@@ -4,10 +4,9 @@
              x:Class="Proyecto_Celiaco.chef"
              IconImageSource="chef.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="60" Margin="10,10,10,10">
+            <Label Text="¿Preparado para cocinar?" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            <Button BackgroundColor="LightBlue" Text="¡Estoy Listo!" HorizontalOptions="Fill" WidthRequest="60" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

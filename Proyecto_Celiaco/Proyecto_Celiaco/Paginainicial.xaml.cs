@@ -36,5 +36,11 @@ namespace Proyecto_Celiaco
 
 
         }
+
+        private async void botonstart_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new chef_menu());
+
+        }
     }
 }

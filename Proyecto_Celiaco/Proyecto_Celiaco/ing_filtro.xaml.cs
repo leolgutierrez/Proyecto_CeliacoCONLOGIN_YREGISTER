@@ -10,18 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Proyecto_Celiaco
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class chef : ContentPage
+    public partial class ing_filtro : ContentPage
     {
-        public chef()
+        public ing_filtro(string dif)
         {
             InitializeComponent();
-            //PABLO TROLOOOO
-            //example crossinfo
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new Dificultad());
+
         }
     }
 }
