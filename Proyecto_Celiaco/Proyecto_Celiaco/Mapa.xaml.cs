@@ -32,8 +32,12 @@ namespace Proyecto_Celiaco
                 return db;
             }
         }
+
+        
         public Mapa()
         {
+            
+            
             InitializeComponent();
             pkOpciones.Items.Add("Restaurantes");
             pkOpciones.Items.Add("Panaderias");

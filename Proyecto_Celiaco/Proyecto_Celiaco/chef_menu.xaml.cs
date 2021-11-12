@@ -13,6 +13,8 @@ namespace Proyecto_Celiaco
         public chef_menu()
         {
             InitializeComponent();
+            
+
         }
     }
 }

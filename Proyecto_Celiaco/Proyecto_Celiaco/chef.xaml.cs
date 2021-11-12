@@ -15,8 +15,7 @@ namespace Proyecto_Celiaco
         public chef()
         {
             InitializeComponent();
-            //PABLO TROLOOOO
-            //example crossinfo
+            
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

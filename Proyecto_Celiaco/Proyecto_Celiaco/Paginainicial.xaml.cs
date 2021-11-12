@@ -25,14 +25,14 @@ namespace Proyecto_Celiaco
 
 
 
-            //usuario pep = new usuario()
-            //{
-            //    email = "leo@gmail.com",
-            //    nombre_usuario = "leolol",
-            //    contraseña = "123456"
-            //};
+            usuario pep = new usuario()
+            {
+                email = "leo@gmail.com",
+                nombre_usuario = "leolol",
+                contraseña = "123456"
+            };
 
-            //await App.SQLiteDB.SaveusuarioAsync(pep);
+            await App.SQLiteDB.SaveusuarioAsync(pep);
 
 
         }
