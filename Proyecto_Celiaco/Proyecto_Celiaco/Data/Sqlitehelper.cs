@@ -13,8 +13,11 @@ namespace Proyecto_Celiaco.card
         public Sqlitehelper(string dbruta)
         {
             db = new SQLiteAsyncConnection(dbruta);
+            
             //db.CreateTableAsync<Direcciones>().Wait();
+            
             db.CreateTableAsync<usuario>().Wait();
+            //db.CreateTableAsync<usuariotemp>().Wait();
         }
         //insercion
         //public Task <int> SaveDireccion(Direcciones dir)
@@ -44,6 +47,18 @@ namespace Proyecto_Celiaco.card
             }
         }
 
+        //para ingresar al usuario temporal , solo un uso despues modificamos xd
+        /*public Task<int> SaveusuariotempAsync(usuariotemp usuariio)
+        {
+            if (usuariio.id_usuarioo == 0)
+            {
+                return db.InsertAsync(usuariio);
+            }
+            else
+            {
+                return null;
+            }
+        }*/
 
 
 

@@ -23,18 +23,6 @@ namespace Proyecto_Celiaco
             await Navigation.PushModalAsync(new Login());
 
 
-
-
-            usuario pep = new usuario()
-            {
-                email = "leo@gmail.com",
-                nombre_usuario = "leolol",
-                contraseña = "123456"
-            };
-
-            await App.SQLiteDB.SaveusuarioAsync(pep);
-
-
         }
 
         private async void botonstart_Clicked_1(object sender, EventArgs e)

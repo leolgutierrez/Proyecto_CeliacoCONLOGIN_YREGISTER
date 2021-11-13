@@ -8,7 +8,11 @@
             <Label Text="¡Bienvenido a la app de cocina!"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" FontSize="Title"/>
-            <Button Text="Iniciar Sesión" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="Button_Clicked"/>
+            <Label Text="EYYY BIENVENIDO" x:Name="labelnomusuario" HorizontalOptions="CenterAndExpand"  FontSize="Large" IsVisible="false"/>
+            <Label Text="Pruebe a iniciar sesion!" x:Name="labelpruebe"  HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <Button Text="Iniciar Sesión" x:Name="btniniciarsesion" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btniniciarsesion_Clicked"/>
+            <Button Text="Cerrar Sesion" x:Name="btncerrarsession" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btncerrarsession_Clicked" IsVisible="false" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

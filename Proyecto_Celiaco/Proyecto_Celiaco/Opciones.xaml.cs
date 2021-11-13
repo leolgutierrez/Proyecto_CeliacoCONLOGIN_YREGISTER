@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
+using SQLitePCL;
+using Proyecto_Celiaco.card;
+using System.IO;
+using Microsoft.Data.Sqlite;
+
 
 namespace Proyecto_Celiaco
 {
@@ -15,11 +21,102 @@ namespace Proyecto_Celiaco
         public Opciones()
         {
             InitializeComponent();
+
+            if (session_temp() != "")
+            {
+                labelnomusuario.IsVisible = true;
+                labelnomusuario.Text = labelnomusuario.Text + " " + session_temp();
+                btniniciarsesion.IsVisible = false;
+                labelpruebe.IsVisible = false;
+            }
+
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void btniniciarsesion_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushModalAsync(new Login());
+        }
+
+        public string session_temp()
+        {
+            string usuario;
+            //ACA SACO LA DIRECC DE LA BDD 
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
+            {
+                db.Open();//abro la canilla
+                string comando = "select nombre_usuario from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
+                SqliteCommand cum = new SqliteCommand(comando, db);
+
+
+                SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
+                try
+                {
+                    if (leedor.GetString(0) != "b")
+                    {
+                        usuario = leedor.GetString(0);
+                        ; //el primer resultado de una tabla imaginaria
+                    }
+
+                    else
+                    {
+                        usuario = "";
+                    }
+
+                }
+
+                catch
+                {
+                    usuario = "";
+                }
+                
+
+
+            }
+
+            return usuario;
 
         }
+
+        private void btncerrarsession_Clicked(object sender, EventArgs e)
+        {
+            labelpruebe.IsVisible = true;
+            btncerrarsession.IsVisible = false;
+            labelnomusuario.Text = "EYYY BIENVENIDO";
+            labelnomusuario.IsVisible = false;
+
+
+            //el update
+
+
+            using (SqliteConnection db =
+                new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
+            {
+                db.Open();//abro la canilla
+                string comando = "update usuario set nombre_usuario='" + "b"+ "' where id_usuario = 1"; //BUSCO AL USUARIO SESSION
+                SqliteCommand cum = new SqliteCommand(comando, db);
+
+
+                SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
+               
+                    if (leedor.Read())
+                    {
+                        
+                    }
+
+                    else
+                    {
+                        
+                    }
+
+               
+
+
+
+            }
+
+
+        }
+
     }
 }

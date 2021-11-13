@@ -44,15 +44,31 @@ namespace Proyecto_Celiaco
 
             catch
             {
+                //ACA CREAMOS AL USUARIO TEMPORAL
+                usuario temp = new usuario()
+                {
+                    email = "a",
+                    nombre_usuario = "b",
+                    contraseña = "c",
+              
+
+                };
+                App.SQLiteDB.SaveusuarioAsync(temp);
+
+                //usuario temp creado
+
+                //SOLO EN LA PRIMERA VEZ QUE SE LOGEE LA APP
                 usuario pep = new usuario()
                 {
                     email = "leo@gmail.com",
                     nombre_usuario = "leolol",
-                    contraseña = "123456"
+                    contraseña = "123456"   
                 };
 
                 App.SQLiteDB.SaveusuarioAsync(pep);
+                
 
+               
             }
 
             
@@ -77,13 +93,26 @@ namespace Proyecto_Celiaco
 
                 db.Open();//abro la canilla
                 string comando = "select nombre_usuario from usuario where nombre_usuario='"+txtboxusuario.Text+"' and contraseña='"+txtboxcontraseña.Text+"'"; //un ejemplo de select
+                string actualizar = "update usuario set nombre_usuario='" + txtboxusuario.Text+"' where id_usuario = 1";
+  
                 SqliteCommand cum = new SqliteCommand(comando, db);
-
+                SqliteCommand dip = new SqliteCommand(actualizar, db);
+                
 
                 SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
                 if (leedor.Read())
                 {
+                    
+                    SqliteDataReader lector = dip.ExecuteReader(); //deberia hacer el update
+                    
+                    lector.Read();
+                    
+                   
+                    
+                   
                     await Navigation.PushModalAsync(new chef_menu());
+                    
+                   
                     ; //el primer resultado de una tabla imaginaria
                 }
 
@@ -94,7 +123,6 @@ namespace Proyecto_Celiaco
 
             }
             
-
 
         }
 
