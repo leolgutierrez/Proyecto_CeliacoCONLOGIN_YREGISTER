@@ -34,13 +34,15 @@ namespace Proyecto_Celiaco
         
         private void lv_lista_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            btn_avanzar.Text = "Sigiente";
             lbl_canasta.Text += ((ingrediente)lv_lista.SelectedItem).nombre + " ,";
             lista_aux.Add((ingrediente)lv_lista.SelectedItem);
         }
         //siguiente
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new Recetas_coleccion(lista_aux,aux_dif));
+            await Navigation.PushModalAsync(new Recetas_coleccion(lista_aux, aux_dif));
+            
         }
     }
 }

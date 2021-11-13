@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Proyecto_Celiaco.card_recetas"
              x:Class="Proyecto_Celiaco.Recetas_coleccion">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="nashe"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="¡Aqui esta nuestro recetario!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <Label Text="Seleccione que receta le interesa mas aprender, y manos a la obra!" FontSize="Subtitle" VerticalOptions="Start"/>
+            <ScrollView>
+                <ListView ItemsSource = "{Binding  recetas}"  HasUnevenRows="True"  x:Name="lv_lista" ItemSelected="lv_lista_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:rec_viewtemp/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

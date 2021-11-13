@@ -16,5 +16,9 @@ namespace Proyecto_Celiaco.card_recetas
         public int tiempo { get; set; }
         public string url { get; set; }
 
+        public int cant_total_ing { get; set; }
+        public int cant_user { get; set; }
+        public string mensaje { get; set; }
+        public Color color_dif { get; set; }
     }
 }

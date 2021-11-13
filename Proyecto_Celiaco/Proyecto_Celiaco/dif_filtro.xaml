@@ -19,6 +19,17 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Clicked="Button_Clicked"  Grid.Column="1" Text="Cancelar"  BackgroundColor="Transparent"    FontAttributes="Bold"/>
+
+                <Button Text="Omitir" Grid.Column="2"   BackgroundColor="Transparent" x:Name="btn_avanzar"   FontAttributes="Bold" Clicked="btn_avanzar_Clicked" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
