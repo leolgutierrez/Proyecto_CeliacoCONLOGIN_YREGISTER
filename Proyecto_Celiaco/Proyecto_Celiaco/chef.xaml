@@ -6,7 +6,9 @@
     <ContentPage.Content>
         <StackLayout Spacing="60" Margin="10,10,10,10">
             <Label Text="¿Preparado para cocinar?" FontSize="Title" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-            <Button BackgroundColor="LightBlue" Text="¡Estoy Listo!" HorizontalOptions="Fill" WidthRequest="60" Clicked="Button_Clicked" />
+            <Frame>
+            <Button  Text="¡Estoy Listo!" BackgroundColor="Transparent" HorizontalOptions="Fill" WidthRequest="80" Clicked="Button_Clicked" FontAttributes="Bold" />
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

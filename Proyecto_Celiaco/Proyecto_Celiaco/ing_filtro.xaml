@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Proyecto_Celiaco.card_recetas"
              x:Class="Proyecto_Celiaco.ing_filtro">
     <ContentPage.Content>
         <StackLayout>
@@ -9,9 +9,30 @@
                 HorizontalOptions="CenterAndExpand" FontSize="Title" />
             <Label Text="Seleccione con que ingredientes cuenta para que podamos sugerir las mejores recetas para usted!" FontSize="Subtitle" VerticalOptions="Start"/>
             <Frame>
-                <Label Text="Los ingredientes que tengo son:" FontSize="Medium"/>
+                <Label Text="Los ingredientes que tengo son:" FontSize="Medium" x:Name="lbl_canasta"/>
             </Frame>
-            <Button Clicked="Button_Clicked" Text="Volver"/>
+            <ScrollView>
+                <ListView ItemsSource = "{Binding lista_ing}"  HasUnevenRows="True"  x:Name="lv_lista"  ItemSelected="lv_lista_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:ing_viewtemp/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Clicked="Button_Clicked" Grid.Column="1" Text="Cancelar"  BackgroundColor="Transparent"    FontAttributes="Bold"/>
+
+                <Button Text="Siguiente" Grid.Column="2"   BackgroundColor="Transparent"   FontAttributes="Bold" Clicked="Button_Clicked_1"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
