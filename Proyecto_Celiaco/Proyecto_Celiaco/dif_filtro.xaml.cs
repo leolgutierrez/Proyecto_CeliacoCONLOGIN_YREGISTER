@@ -29,5 +29,15 @@ namespace Proyecto_Celiaco
             card_recetas.Dificultad aux= (card_recetas.Dificultad)lv_lista.SelectedItem;
             await Navigation.PushModalAsync(new ing_filtro(aux.tipo));
         }
+        //volver a chef menu
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new chef_menu());
+        }
+        //ir sin dificultad
+        private async void btn_avanzar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ing_filtro(""));
+        }
     }
 }

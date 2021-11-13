@@ -30,6 +30,8 @@ namespace Proyecto_Celiaco.card_recetas
             lstrec.Add(new ingrediente { ing_Id = 12, nombre = "Tomate", url = "https://www.lovemysalad.com/sites/default/files/styles/image_530x397/public/tomates_-_vladimir_morozov.jpg?itok=XMg8FUqr" });
             lstrec.Add(new ingrediente { ing_Id = 13, nombre = "Fecula de Maiz", url = "https://cdn2.cocinadelirante.com/sites/default/files/images/2017/10/diferenciaentrealmidondemaizymaicena.jpg" });
             lstrec.Add(new ingrediente { ing_Id = 14, nombre = "Leche (Liquida)", url = "https://imagenes.elpais.com/resizer/5nI4wXyGN_4jvSSsa03TTuYdOfQ=/980x735/cloudfront-eu-central-1.images.arcpublishing.com/prisa/4JW7BFJRRQVJDRT55GABP2P6HU.jpg" });
+            lstrec.Add(new ingrediente { ing_Id = 15, nombre = "Crema de Leche", url = "https://cdn.queapetito.com/wp-content/uploads/2018/11/Crema-de-leche-600x469.jpg" });
+            lstrec.Add(new ingrediente { ing_Id = 16, nombre = "Azúcar", url = "https://elmundoenrecetas.s3.amazonaws.com/uploads/tip/main_image/2/azucar.jpg" });
 
 
         }

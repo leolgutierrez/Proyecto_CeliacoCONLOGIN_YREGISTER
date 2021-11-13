@@ -31,7 +31,7 @@
                 </Grid.RowDefinitions>
                 <Button Clicked="Button_Clicked" Grid.Column="1" Text="Cancelar"  BackgroundColor="Transparent"    FontAttributes="Bold"/>
 
-                <Button Text="Siguiente" Grid.Column="2"   BackgroundColor="Transparent"   FontAttributes="Bold" Clicked="Button_Clicked_1"/>
+                <Button Text="Omitir" Grid.Column="2"   BackgroundColor="Transparent" x:Name="btn_avanzar"   FontAttributes="Bold" Clicked="Button_Clicked_1"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
