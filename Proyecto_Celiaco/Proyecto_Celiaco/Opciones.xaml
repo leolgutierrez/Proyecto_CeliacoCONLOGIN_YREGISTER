@@ -5,14 +5,14 @@
              IconImageSource="opc.png">
     <ContentPage.Content>
         <StackLayout Margin="10,10,10,10" Padding="10,10,10,10">
-            <Label Text="¡Bienvenido a la app de cocina!"
+            <Label x:Name="labelBienbenida" Text="¡Bienvenido a la app de cocina!"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" FontSize="Title"/>
             <Label Text="EYYY BIENVENIDO" x:Name="labelnomusuario" HorizontalOptions="CenterAndExpand"  FontSize="Large" IsVisible="false"/>
             <Label Text="Pruebe a iniciar sesion!" x:Name="labelpruebe"  HorizontalOptions="CenterAndExpand" FontSize="Large"/>
             <Button Text="Iniciar Sesión" x:Name="btniniciarsesion" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btniniciarsesion_Clicked"/>
             <Button Text="Cerrar Sesion" x:Name="btncerrarsession" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btncerrarsession_Clicked" IsVisible="false" />
-
+            <Button Text="Registrarse" HorizontalOptions="Start" x:Name="btnregistro" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btnregistro_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

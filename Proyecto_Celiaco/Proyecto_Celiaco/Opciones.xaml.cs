@@ -22,13 +22,26 @@ namespace Proyecto_Celiaco
         {
             InitializeComponent();
 
-            if (session_temp() != "")
+            string a = session_temp();
+            if (a != "")//detecta que hay un logeo
             {
+                labelBienbenida.IsVisible = false;
                 labelnomusuario.IsVisible = true;
-                labelnomusuario.Text = labelnomusuario.Text + " " + session_temp();
+                labelnomusuario.Text = "EYYY BIENVENIDO" + " " + session_temp();
                 btniniciarsesion.IsVisible = false;
+                btncerrarsession.IsVisible = true;
                 labelpruebe.IsVisible = false;
             }
+
+            else
+            {
+                //no hay un logeo
+                labelnomusuario.IsVisible = false;
+                btncerrarsession.IsVisible = false;
+                labelBienbenida.IsVisible = true;
+
+            }
+
 
         }
 
@@ -50,35 +63,41 @@ namespace Proyecto_Celiaco
 
 
                 SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
-                try
+                                                               // try
+                leedor.Read();                                            //{
+                string result = leedor.GetValue(0).ToString();
+                if (result != "b")
                 {
-                    if (leedor.GetString(0) != "b")
-                    {
-                        usuario = leedor.GetString(0);
-                        ; //el primer resultado de una tabla imaginaria
-                    }
+                    usuario = result;
+                    btniniciarsesion.Text = "ELPEPE";  //ENTRO AQUII
 
-                    else
-                    {
-                        usuario = "";
-                    }
-
+                    ; //el primer resultado de una tabla imaginaria
                 }
 
-                catch
+                else
                 {
                     usuario = "";
                 }
-                
-
-
             }
+
+            //}
+
+
+            
 
             return usuario;
 
+
         }
 
-        private void btncerrarsession_Clicked(object sender, EventArgs e)
+
+        
+
+            
+        
+
+
+        private async void btncerrarsession_Clicked(object sender, EventArgs e)
         {
             labelpruebe.IsVisible = true;
             btncerrarsession.IsVisible = false;
@@ -98,18 +117,10 @@ namespace Proyecto_Celiaco
 
 
                 SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
-               
-                    if (leedor.Read())
-                    {
-                        
-                    }
 
-                    else
-                    {
-                        
-                    }
+                leedor.Read();
 
-               
+                await Navigation.PushModalAsync(new chef_menu());
 
 
 
@@ -118,5 +129,9 @@ namespace Proyecto_Celiaco
 
         }
 
+        private void btnregistro_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,7 +19,7 @@
             <Button Text="Ingresar" Margin="0,70,0,0" HorizontalOptions="Center" x:Name="botonlogear" Clicked="botonlogear_Clicked"  ></Button>
 
             <Label Text="No tienes cuenta?" TextColor="White" FontSize="Medium" ></Label>
-            <Button Text="Registrate ahora" HorizontalOptions="Start" x:Name="btnregistro" Clicked="btnregistro_Clicked" />
+             
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
