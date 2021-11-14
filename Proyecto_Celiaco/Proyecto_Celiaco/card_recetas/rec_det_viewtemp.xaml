@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_Celiaco.card_recetas.rec_det_viewtemp">
+  <ContentView.Content>
+      <StackLayout Padding="10" Spacing="15">
+            <Frame HasShadow="True" BackgroundColor="LightGray">
+                <Label  Text="{Binding nombre}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            </Frame>
+            <Frame>
+                <Image Source="{Binding url}" Aspect="Fill" HeightRequest="200"/>
+            </Frame>
+            <BoxView Grid.Row="1" Color="Gray"  
+                    HorizontalOptions="FillAndExpand"  
+                    HeightRequest="1"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <!--duracion-->
+                <Label Grid.Row="0" Grid.Column="0" Text="Duración:" FontSize="Subtitle"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding tiempo}" FontSize="Subtitle"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="minutos" FontSize="Subtitle"/>
+                <!--cantidades-->
+                <Label Grid.Row="1" Grid.Column="0" Text="Total de Ingredientes:" FontSize="Subtitle"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding mensaje}" FontSize="Subtitle" />
+            </Grid>
+            <BoxView Grid.Row="1" Color="Gray"  
+                    HorizontalOptions="FillAndExpand"  
+                    HeightRequest="1"/>
+            <Label Text="Lista de Ingredientes:" FontSize="Medium" FontAttributes="Italic"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding descp_ing}" FontSize="Body"/>
+            </Grid>
+            
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

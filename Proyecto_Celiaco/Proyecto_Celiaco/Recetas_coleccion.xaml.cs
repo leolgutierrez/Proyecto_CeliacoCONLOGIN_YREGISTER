@@ -116,9 +116,11 @@ namespace Proyecto_Celiaco
 
         }
 
-        private async void lv_lista_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        public async void lv_lista_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushModalAsync(new Receta_Detalle((Receta)lv_lista.SelectedItem));
+            Receta rec_aux = new Receta();
+            rec_aux = (Receta)lv_lista.SelectedItem;
+            await Navigation.PushModalAsync(new Receta_Detalle(rec_aux));
         }
     }
 }
