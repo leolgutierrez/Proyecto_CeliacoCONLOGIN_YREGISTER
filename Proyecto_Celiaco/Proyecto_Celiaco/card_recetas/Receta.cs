@@ -20,5 +20,8 @@ namespace Proyecto_Celiaco.card_recetas
         public int cant_user { get; set; }
         public string mensaje { get; set; }
         public Color color_dif { get; set; }
+        public string descp_ing { get; set; }
+        //descripcion de leo
+        public string Descripcion { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Proyecto_Celiaco.card_recetas
 {
-    class instruccion
+    public class instruccion
     {
         [PrimaryKey, AutoIncrement]
         public int inst_id { get; set; }
