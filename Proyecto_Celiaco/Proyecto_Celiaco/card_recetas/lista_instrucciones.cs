@@ -19,7 +19,7 @@ namespace Proyecto_Celiaco.card_recetas
         {
             //Aqui la carga de datos en una lista de los instrucciones de una receta x
             //biscochitos salados
-            lstrec.Add(new instruccion() {inst_id=1,receta_id=1,descripcion= "1. Con un recipiente poner la crema de leche" });
+            lstrec.Add(new instruccion() { inst_id = 1 ,receta_id = 1,descripcion= "1. Con un recipiente poner la crema de leche" });
             lstrec.Add(new instruccion() { inst_id = 2, receta_id = 1, descripcion = "2. Lavar el pote de crema y medir 2 potes de premezcla, salando a gusto" });
             lstrec.Add(new instruccion() { inst_id = 3, receta_id = 1, descripcion = "3. Amasar hasta formar una masa que nose pegue en los dedos" });
             lstrec.Add(new instruccion() { inst_id = 4, receta_id = 1, descripcion = "4. Saborizar a gusto con oregano o queso u / u otro saborizante a gusto" });

@@ -3,20 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Proyecto_Celiaco.card_recetas"
              x:Class="Proyecto_Celiaco.Carrousel_Instrucciones">
     <ContentPage.Content>
-        
-            <StackLayout>
-                <ScrollView>
-                    <ListView ItemsSource = "{Binding  instrucciones}" Rotation="270"  HasUnevenRows="True"  x:Name="lv_lista" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                <local:carrousel/>
-                            </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
 
-                </ScrollView>
-            </StackLayout>
+        <StackLayout Padding="5" Margin="10,10,10,10">
+            <Frame HasShadow="True" BackgroundColor="LightGray">
+                <Label  Text="" x:Name="lbl_titulo" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"></Label>
+            </Frame>
+            <BoxView Grid.Row="1" Color="Gray"  
+                    HorizontalOptions="FillAndExpand"  
+                    HeightRequest="1"/>
+            <Label Text="Instrucciones:" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" WidthRequest="1000"/>
+            <BoxView Grid.Row="1" Color="Gray"  
+                    HorizontalOptions="FillAndExpand"  
+                    HeightRequest="1"/>
+            <Frame>
+                <Label Text="Deslizar las tarjetas de izquierda a derecha para ver el siguiente paso de la receta ▶" FontSize="20" FontAttributes="Italic" HorizontalTextAlignment="Center" />
+            </Frame>
+            <Grid VerticalOptions="CenterAndExpand" RowDefinitions="350,Auto">
+                
+                <CarouselView Margin="0" IsBounceEnabled="True" ItemsSource="{Binding DescCollection}"
+
+               IndicatorView="indicatorView">
+
+                    <CarouselView.ItemTemplate>
+
+                        <DataTemplate>
+                            <Frame  BorderColor="Gray" Margin="8" HasShadow="True" HeightRequest="250" CornerRadius="20" VerticalOptions="StartAndExpand">
+                                <StackLayout >
+                                    <Grid HorizontalOptions="FillAndExpand">
+
+                                        <Label Text="{Binding descripcion}" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </DataTemplate>
+
+                    </CarouselView.ItemTemplate>
+
+
+
+                </CarouselView>
+
+                <IndicatorView Grid.Row="1" Margin="0,0,0,20" VerticalOptions="EndAndExpand" x:Name="indicatorView"
+
+            IndicatorColor="Gray" SelectedIndicatorColor="#F1C40F"
+
+            HorizontalOptions="Center"/>
+
+
+
+
+
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
