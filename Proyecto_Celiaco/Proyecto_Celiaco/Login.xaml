@@ -18,7 +18,7 @@
 
             <Button Text="Ingresar" Margin="0,70,0,0" HorizontalOptions="Center" x:Name="botonlogear" Clicked="botonlogear_Clicked"  ></Button>
 
-            <Label Text="No tienes cuenta?" TextColor="White" FontSize="Medium" ></Label>
+           
              
         </StackLayout>
     </ContentPage.Content>

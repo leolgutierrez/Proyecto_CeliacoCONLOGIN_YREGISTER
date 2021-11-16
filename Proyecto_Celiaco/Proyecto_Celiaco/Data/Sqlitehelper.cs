@@ -17,6 +17,7 @@ namespace Proyecto_Celiaco.card
             //db.CreateTableAsync<Direcciones>().Wait();
             
             db.CreateTableAsync<usuario>().Wait();
+            db.CreateTableAsync<RecetaFav>().Wait();
             //db.CreateTableAsync<usuariotemp>().Wait();
         }
         //insercion
@@ -46,6 +47,22 @@ namespace Proyecto_Celiaco.card
                 return null;
             }
         }
+
+        public Task<int> SaveRecetaFav(RecetaFav receta)
+        {
+            if (receta.recetafav_id == 0)
+            {
+                return db.InsertAsync(receta);
+
+            }
+
+            else
+            {
+                return null;
+            }
+        }
+
+
 
         //para ingresar al usuario temporal , solo un uso despues modificamos xd
         /*public Task<int> SaveusuariotempAsync(usuariotemp usuariio)

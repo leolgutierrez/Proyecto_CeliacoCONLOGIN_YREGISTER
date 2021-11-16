@@ -27,10 +27,12 @@ namespace Proyecto_Celiaco
             {
                 labelBienbenida.IsVisible = false;
                 labelnomusuario.IsVisible = true;
-                labelnomusuario.Text = "EYYY BIENVENIDO" + " " + session_temp();
+                labelnomusuario.Text = "Bienvenido" + " " + session_temp();
                 btniniciarsesion.IsVisible = false;
                 btncerrarsession.IsVisible = true;
                 labelpruebe.IsVisible = false;
+                btnregistro.IsVisible = false;
+                labelpregunta.IsVisible = false;
             }
 
             else
@@ -39,7 +41,8 @@ namespace Proyecto_Celiaco
                 labelnomusuario.IsVisible = false;
                 btncerrarsession.IsVisible = false;
                 labelBienbenida.IsVisible = true;
-
+                btnregistro.IsVisible = false;
+                labelBienbenida.IsVisible = true;
             }
 
 
@@ -69,7 +72,7 @@ namespace Proyecto_Celiaco
                 if (result != "b")
                 {
                     usuario = result;
-                    btniniciarsesion.Text = "ELPEPE";  //ENTRO AQUII
+                      //ENTRO AQUII
 
                     ; //el primer resultado de una tabla imaginaria
                 }
@@ -129,9 +132,9 @@ namespace Proyecto_Celiaco
 
         }
 
-        private void btnregistro_Clicked(object sender, EventArgs e)
+        private async void btnregistro_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new Registro());
         }
     }
 }

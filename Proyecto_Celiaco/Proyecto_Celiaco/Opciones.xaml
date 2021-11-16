@@ -12,6 +12,7 @@
             <Label Text="Pruebe a iniciar sesion!" x:Name="labelpruebe"  HorizontalOptions="CenterAndExpand" FontSize="Large"/>
             <Button Text="Iniciar Sesión" x:Name="btniniciarsesion" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btniniciarsesion_Clicked"/>
             <Button Text="Cerrar Sesion" x:Name="btncerrarsession" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btncerrarsession_Clicked" IsVisible="false" />
+            <Label x:Name="labelpregunta" Text="No tienes cuenta?" TextColor="White" FontSize="Medium" ></Label>
             <Button Text="Registrarse" HorizontalOptions="Start" x:Name="btnregistro" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btnregistro_Clicked" />
         </StackLayout>
     </ContentPage.Content>

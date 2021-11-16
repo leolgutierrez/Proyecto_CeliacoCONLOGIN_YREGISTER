@@ -14,8 +14,14 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+             
                 
             </ScrollView>
+
+            <Frame>
+                <Button Text="Guardar receta a favoritos " x:Name="butonafavoritos" FontFamily="Medium" FontAttributes="Bold" Clicked="butonafavoritos_Clicked" />
+            </Frame>
+
             <Frame>
                 <Button Text="¡Comenzar!" FontSize="Medium" FontAttributes="Bold" Clicked="Button_Clicked"/>
             </Frame>

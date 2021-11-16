@@ -66,6 +66,14 @@ namespace Proyecto_Celiaco
                 };
 
                 App.SQLiteDB.SaveusuarioAsync(pep);
+
+                RecetaFav rec = new RecetaFav()
+                {
+                    id_receta = 99,
+                    id_usuario = 99
+
+                };
+                App.SQLiteDB.SaveRecetaFav(rec);
                 
 
                
