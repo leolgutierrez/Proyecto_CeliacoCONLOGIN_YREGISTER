@@ -18,7 +18,7 @@ namespace Proyecto_Celiaco
     public partial class Receta_Detalle : ContentPage
     {
         public ObservableCollection<Receta> recetas { get; set; }
-        public ObservableCollection<instruccion> instrucciones { get; set; }
+        //public ObservableCollection<instruccion> instrucciones { get; set; }
         //public ObservableCollection<IngredientesXRecetas> lista_ing { get; set; }
         Receta aux_receta = new Receta();
         public Receta_Detalle(Receta receta)
@@ -30,7 +30,7 @@ namespace Proyecto_Celiaco
             lista_ing_Recetas lista_Ing_Recetas = new lista_ing_Recetas();
             Lista_ingredientes ingredientes = new Lista_ingredientes();
             InitializeComponent();
-            CargarIngredientes(lista_Ing_Recetas, ingredientes);
+            CargarIngredientes(lista_Ing_Recetas,ingredientes);
             BindingContext = this;
         }
 
@@ -63,17 +63,9 @@ namespace Proyecto_Celiaco
         private async void Button_Clicked(object sender, EventArgs e)
         {
             int aux = aux_receta.receta_id;
-            instrucciones = new ObservableCollection<instruccion>();
-            lista_instrucciones lst_instrucciones = new lista_instrucciones();
-            int i = 0;
-            while (i < lst_instrucciones.lstrec.Count)
-            {
-                if (lst_instrucciones.lstrec[i].receta_id == aux)
-                {
-                    instrucciones.Add(lst_instrucciones.lstrec[i]);
-                }
-            }
-            await Navigation.PushModalAsync(new Carrousel_Instrucciones(instrucciones));
+            string aux_titulo = aux_receta.nombre;
+            string aux_url = aux_receta.url;
+            await Navigation.PushModalAsync(new Carrousel_Instrucciones(aux, aux_titulo, aux_url)); 
         }
 
         private async void butonafavoritos_Clicked(object sender, EventArgs e)
