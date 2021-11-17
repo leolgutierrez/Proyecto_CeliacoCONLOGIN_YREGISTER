@@ -63,7 +63,7 @@ namespace Proyecto_Celiaco
                 new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();//abro la canilla
-                string comando = "select nombre_usuario from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
+                string comando = "select contraseña from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
                 SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
                                                               // try
@@ -106,7 +106,7 @@ namespace Proyecto_Celiaco
                 new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();//abro la canilla
-                string comando = "update usuario set nombre_usuario='" + "b"+ "' where id_usuario = 1"; //BUSCO AL USUARIO SESSION
+                string comando = "update usuario set contraseña='" + "b"+ "' where id_usuario = 1"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
 
 

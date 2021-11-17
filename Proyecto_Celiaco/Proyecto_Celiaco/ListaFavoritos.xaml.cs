@@ -31,21 +31,29 @@ namespace Proyecto_Celiaco
         public ListaFavoritos()
         {
             InitializeComponent();
-            
-            recetas = new ObservableCollection<Receta>();
-            lista_ing = new ObservableCollection<ingrediente>();
-            lista_ing_rec = new ObservableCollection<IngredientesXRecetas>();
-            lista_ing_Recetas lista = new lista_ing_Recetas();
-            lista_recetas lista_Recetas = new lista_recetas();
-            lista_recetas listafavoritos = new lista_recetas();
-            lista_ing_rec = lista.lstrec;
-            recetas = cargar_recetas_fav(lista_Recetas);             
-            cargar_cant();
-            string dificultad = "";
-            ordenar_por_filtro(lista_ing,dificultad , recetas, lista_ing_rec);
-            DisplayAlert("AAA", "EEEE", "IIII");
-            BindingContext = this;
-            
+            if(session_temp()!= "")
+            {
+                labeltest.IsVisible = true;
+                titulo.Text = "¡Aqui estan sus recetas favoritas!";
+                recetas = new ObservableCollection<Receta>();
+                lista_ing = new ObservableCollection<ingrediente>();
+                lista_ing_rec = new ObservableCollection<IngredientesXRecetas>();
+                lista_ing_Recetas lista = new lista_ing_Recetas();
+                lista_recetas lista_Recetas = new lista_recetas();
+                lista_recetas listafavoritos = new lista_recetas();
+                lista_ing_rec = lista.lstrec;
+                recetas = cargar_recetas_fav(lista_Recetas);
+                cargar_cant();
+                string dificultad = "";
+                ordenar_por_filtro(lista_ing, dificultad, recetas, lista_ing_rec);
+                BindingContext = this;
+
+            }
+            else
+            {
+                titulo.Text = "No esta logeado,debe logearse para usar esta funcion 😊";
+                labeltest.IsVisible = false;
+            } 
             
         }
 
@@ -73,16 +81,25 @@ namespace Proyecto_Celiaco
                    new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();
-                string comando = "select id_receta from RecetaFav where id_usuario=1"; //un ejemplo de select
+                string comando = "select id_receta from RecetaFav where id_usuario="+devolverid(); //un ejemplo de select
                 SqliteCommand com = new SqliteCommand(comando, db);
+                int rowcount = 0;
+                rowcount = Convert.ToInt32(com.ExecuteScalar());
                 SqliteDataReader lector = com.ExecuteReader();
-                lector.Read();
+                
 
-                    while (lector.Read())
+                lector.Read();
+               
+                    for(int i=0;i<rowcount;i++)
                     {
-                        int id = Convert.ToInt32(lector["id_receta"]);
-                    
-                        resultado.Add(pov.lstrec[id]);
+                        int id = Convert.ToInt32(lector.GetValue(i));
+                    //int id = Convert.ToInt32(lector["id_receta"].);
+
+                    DisplayAlert("prueba", id.ToString(), "suppeerr");
+                    DisplayAlert("SUUPAA", "deberia aparecer", "suppeerr");
+
+                    resultado.Add(pov.lstrec[id]);
+                    titulo.Text=id.ToString();
                     }
 
 
@@ -187,7 +204,7 @@ namespace Proyecto_Celiaco
                 new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();//abro la canilla
-                string comando = "select nombre_usuario from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
+                string comando = "select contraseña from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
                 SqliteDataReader leedor = cum.ExecuteReader(); 
                 leedor.Read();                                            
@@ -207,7 +224,7 @@ namespace Proyecto_Celiaco
         }
 
 
-        /*
+        
         public string devolverid()
         {
             string a;
@@ -215,7 +232,7 @@ namespace Proyecto_Celiaco
                 new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();//abro la canilla
-                string comando = "select id_usuario from usuario where nombre_usuario=(select nombre_usuario where id_usuario=1)"; //BUSCO AL USUARIO SESSION
+                string comando = "select id_usuario from usuario where nombre_usuario=(select contraseña from usuario where id_usuario=1)"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
                 SqliteDataReader leedor = cum.ExecuteReader();
                 leedor.Read();
@@ -224,7 +241,7 @@ namespace Proyecto_Celiaco
             }
             return a;
 
-        }*/
+        }
 
 
     }

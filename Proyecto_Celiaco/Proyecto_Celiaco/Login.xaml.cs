@@ -48,8 +48,8 @@ namespace Proyecto_Celiaco
                 usuario temp = new usuario()
                 {
                     email = "a",
-                    nombre_usuario = "b",
-                    contraseña = "c",
+                    nombre_usuario = "c",
+                    contraseña = "b",
               
 
                 };
@@ -98,7 +98,7 @@ namespace Proyecto_Celiaco
 
                 db.Open();//abro la canilla
                 string comando = "select nombre_usuario from usuario where nombre_usuario='"+txtboxusuario.Text+"' and contraseña='"+txtboxcontraseña.Text+"'"; //un ejemplo de select
-                string actualizar = "update usuario set nombre_usuario='" +txtboxusuario.Text +"' where id_usuario = 1";
+                string actualizar = "update usuario set contraseña='" + txtboxusuario.Text +"' where id_usuario = 1";
   
                 SqliteCommand cum = new SqliteCommand(comando, db);
                 SqliteCommand dip = new SqliteCommand(actualizar, db);

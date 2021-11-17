@@ -69,13 +69,11 @@ namespace Proyecto_Celiaco
         }
 
         private async void butonafavoritos_Clicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("wat", "se agrego la receta", "si");
+        {           
             string a = session_temp();
 
             if (a != "")
             {
-
                 //HERE NECESITAMOS COMPROBAR SI YA SE CARGO LA RECETA   
                 RecetaFav recetaa = new RecetaFav
                 {
@@ -84,18 +82,13 @@ namespace Proyecto_Celiaco
                     id_receta = aux_receta.receta_id,
 
                 };
-
-
                 await App.SQLiteDB.SaveRecetaFav(recetaa);
                 await DisplayAlert("Completado", "se agrego la receta", "AA");
-
             }
-
             else
             {
                 await DisplayAlert("ERROR", "debe logearse para guardar la receta", "ok");
             }
-
         }
 
 
@@ -107,7 +100,7 @@ namespace Proyecto_Celiaco
                 new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
                 db.Open();//abro la canilla
-                string comando = "select nombre_usuario from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
+                string comando = "select contraseña from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
 
 
@@ -149,7 +142,7 @@ namespace Proyecto_Celiaco
                 int id;
 
                 db.Open();//abro la canilla
-                string comandobuscarnombre = "select nombre_usuario from usuario where id_usuario=1";
+                string comandobuscarnombre = "select contraseña from usuario where id_usuario=1";
                 //BUSCO AL USUARIO SESSION
                 SqliteCommand zen = new SqliteCommand(comandobuscarnombre, db);
                 SqliteDataReader lector = zen.ExecuteReader();
@@ -168,12 +161,6 @@ namespace Proyecto_Celiaco
                 id = Convert.ToInt32(result);
                 //xd
                 return id;
-
-
-
-
-
-
 
             }
 

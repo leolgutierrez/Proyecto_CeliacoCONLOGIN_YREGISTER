@@ -10,7 +10,6 @@ namespace Proyecto_Celiaco.card
     {
         [PrimaryKey, AutoIncrement]
         public int recetafav_id { get; set; }
-
         
         public int id_usuario { get; set; }
         

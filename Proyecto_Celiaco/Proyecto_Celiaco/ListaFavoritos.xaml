@@ -5,9 +5,9 @@
              IconImageSource="favorito.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="¡Aqui esta nuestro recetario!"
+            <Label Text="¡Aqui estan sus recetas favoritas!"
                 VerticalOptions="StartAndExpand" 
-                HorizontalOptions="CenterAndExpand" FontSize="Title" />
+                HorizontalOptions="CenterAndExpand" FontSize="Title" x:Name="titulo" />
             <Label Text="Seleccione que receta le interesa mas aprender" x:Name="labeltest" FontSize="Subtitle" VerticalOptions="Start"/>
             <ScrollView>
                 <ListView ItemsSource = "{Binding  recetas}"  HasUnevenRows="True"  x:Name="lv_lista" ItemSelected="lv_lista_ItemSelected" >
