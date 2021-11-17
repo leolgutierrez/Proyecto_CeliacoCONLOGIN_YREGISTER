@@ -41,8 +41,10 @@ namespace Proyecto_Celiaco
                 labelnomusuario.IsVisible = false;
                 btncerrarsession.IsVisible = false;
                 labelBienbenida.IsVisible = true;
-                btnregistro.IsVisible = false;
+                btnregistro.IsVisible = true;
                 labelBienbenida.IsVisible = true;
+                labelpregunta.IsVisible = true;
+
             }
 
 
@@ -63,34 +65,23 @@ namespace Proyecto_Celiaco
                 db.Open();//abro la canilla
                 string comando = "select nombre_usuario from usuario where id_usuario=1"; //BUSCO AL USUARIO SESSION
                 SqliteCommand cum = new SqliteCommand(comando, db);
-
-
                 SqliteDataReader leedor = cum.ExecuteReader(); //abro un reader para que sea mas facil el manejo de datos
-                                                               // try
+                                                              // try
                 leedor.Read();                                            //{
                 string result = leedor.GetValue(0).ToString();
                 if (result != "b")
                 {
                     usuario = result;
                       //ENTRO AQUII
-
                     ; //el primer resultado de una tabla imaginaria
                 }
-
                 else
                 {
                     usuario = "";
                 }
             }
-
             //}
-
-
-            
-
             return usuario;
-
-
         }
 
 

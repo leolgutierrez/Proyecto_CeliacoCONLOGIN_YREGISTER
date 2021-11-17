@@ -112,9 +112,7 @@ namespace Proyecto_Celiaco
                     
                     lector.Read();
 
-                    
-                  
-                   
+
                     await Navigation.PushModalAsync(new chef_menu());
                     
                    

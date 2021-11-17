@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proyecto_Celiaco.ListaFavoritos"
+             x:Class="Proyecto_Celiaco.ListaFavoritos" xmlns:local="clr-namespace:Proyecto_Celiaco.card_recetas"
              IconImageSource="favorito.png">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="¡Aqui esta nuestro recetario!"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Title" />
+            <Label Text="Seleccione que receta le interesa mas aprender" x:Name="labeltest" FontSize="Subtitle" VerticalOptions="Start"/>
+            <ScrollView>
+                <ListView ItemsSource = "{Binding  recetas}"  HasUnevenRows="True"  x:Name="lv_lista" ItemSelected="lv_lista_ItemSelected" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <local:rec_viewtemp/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -70,22 +70,24 @@ namespace Proyecto_Celiaco
 
         private async void butonafavoritos_Clicked(object sender, EventArgs e)
         {
+            await DisplayAlert("wat", "se agrego la receta", "si");
             string a = session_temp();
-           
+
             if (a != "")
             {
 
+                //HERE NECESITAMOS COMPROBAR SI YA SE CARGO LA RECETA   
                 RecetaFav recetaa = new RecetaFav
                 {
                     id_usuario = id_usuario(),
-                    
+
                     id_receta = aux_receta.receta_id,
 
                 };
-                await DisplayAlert("bb", "bbb", "bbb");
+
 
                 await App.SQLiteDB.SaveRecetaFav(recetaa);
-                await DisplayAlert("cccc", "ccc", "ccc");
+                await DisplayAlert("Completado", "se agrego la receta", "AA");
 
             }
 
@@ -164,7 +166,7 @@ namespace Proyecto_Celiaco
                 string result = leedor.GetValue(0).ToString();
 
                 id = Convert.ToInt32(result);
-
+                //xd
                 return id;
 
 
