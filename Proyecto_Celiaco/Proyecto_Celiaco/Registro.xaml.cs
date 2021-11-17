@@ -43,7 +43,7 @@ namespace Proyecto_Celiaco
                     if (validaremail())
                     {
                         await App.SQLiteDB.SaveusuarioAsync(user);
-                        await DisplayAlert("Registrado", "Ahora puede Logearse", "uwu");
+                        await DisplayAlert("Registrado", "Ahora puede Logearse", "cerrar");
 
                         //No pude hacer el mail, te falle virgo-sempai
 
@@ -58,13 +58,13 @@ namespace Proyecto_Celiaco
                 {
                     if (validarusuario() == false)
                     {
-                        await DisplayAlert("ERROR", "el nombre de usuario ya se encuentra en uso", "uwu");
+                        await DisplayAlert("ERROR", "el nombre de usuario ya se encuentra en uso", "cerrar");
 
                     }
 
                     if(validaremail()==false)
                     {
-                        await DisplayAlert("ERROR", "Email ya en uso,", "uwu");
+                        await DisplayAlert("ERROR", "Email ya en uso,", "cerrar");
 
                     }
 
@@ -73,7 +73,7 @@ namespace Proyecto_Celiaco
             }
             else
             {
-                await DisplayAlert("Alerta","Algunos campos estan vacios","ok");
+                await DisplayAlert("Alerta","Algunos campos estan vacios","okey");
             }
          
         }

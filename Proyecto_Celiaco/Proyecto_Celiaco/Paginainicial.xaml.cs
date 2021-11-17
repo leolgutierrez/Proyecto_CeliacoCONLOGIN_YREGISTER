@@ -18,12 +18,12 @@ namespace Proyecto_Celiaco
             InitializeComponent();
         }
 
-        private async void botonstart_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new Login());
+        //private async void botonstart_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushModalAsync(new Login());
 
 
-        }
+        //}
 
         private async void botonstart_Clicked_1(object sender, EventArgs e)
         {

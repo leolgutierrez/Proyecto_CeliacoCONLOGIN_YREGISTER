@@ -29,9 +29,12 @@ namespace Proyecto_Celiaco
                 labelnomusuario.IsVisible = true;
                 labelnomusuario.Text = "Bienvenido" + " " + session_temp();
                 btniniciarsesion.IsVisible = false;
+                fr_iniciar.IsVisible = false;
                 btncerrarsession.IsVisible = true;
+                fr_cerrar.IsVisible = true;
                 labelpruebe.IsVisible = false;
                 btnregistro.IsVisible = false;
+                fr_reg.IsVisible = false;
                 labelpregunta.IsVisible = false;
             }
 
@@ -42,6 +45,9 @@ namespace Proyecto_Celiaco
                 btncerrarsession.IsVisible = false;
                 labelBienbenida.IsVisible = true;
                 btnregistro.IsVisible = true;
+                fr_reg.IsVisible = true;
+                fr_cerrar.IsVisible = false;
+                fr_iniciar.IsVisible = true;
                 labelBienbenida.IsVisible = true;
                 labelpregunta.IsVisible = true;
 

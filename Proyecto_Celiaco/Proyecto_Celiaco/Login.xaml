@@ -2,21 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proyecto_Celiaco.Login"
-             BackgroundImageSource="backgroud.jpg"
+             
              >
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"  Padding="20">
 
-            <Label x:Name="txtgigante" Text="Ingrese su cuenta" Margin="0,120,0,0" FontFamily="3d" FontSize="50" HorizontalOptions="Center" TextColor="White"></Label>
+            <Label x:Name="txtgigante" Text="Ingrese su cuenta" Margin="0,120,0,0" FontFamily="3d" FontSize="50" HorizontalOptions="Center" TextColor="Gray"></Label>
 
-            <Label Text="Ingrese su usuario" TextColor="White"  FontSize="Large"   />
-            <Entry Placeholder="usuariogenerico" PlaceholderColor="White" x:Name="txtboxusuario" TextColor="White" />
+            <Label Text="Ingrese su usuario" TextColor="Gray"  FontSize="Large"   />
+            <Entry Placeholder="Nombre de Usuario" PlaceholderColor="DimGray" x:Name="txtboxusuario" TextColor="Gray" />
 
-            <Label Text="ingrese su contraseña" TextColor="White" FontSize="Large" />
-            <Entry Placeholder="example" PlaceholderColor="White" IsPassword="True" x:Name="txtboxcontraseña" TextColor="White"/>
+            <Label Text="ingrese su contraseña" TextColor="Gray" FontSize="Large" />
+            <Entry Placeholder="contraseña" PlaceholderColor="DimGray" IsPassword="True" x:Name="txtboxcontraseña" TextColor="Gray"/>
 
 
-            <Button Text="Ingresar" Margin="0,70,0,0" HorizontalOptions="Center" x:Name="botonlogear" Clicked="botonlogear_Clicked"  ></Button>
+            <Button Text="Ingresar" Margin="0,70,0,0" HorizontalOptions="Center" x:Name="botonlogear" Clicked="botonlogear_Clicked" WidthRequest="250" ></Button>
 
            
              

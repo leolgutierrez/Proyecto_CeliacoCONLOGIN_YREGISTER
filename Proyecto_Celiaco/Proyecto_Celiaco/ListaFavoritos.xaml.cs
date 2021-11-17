@@ -42,7 +42,7 @@ namespace Proyecto_Celiaco
                 lista_recetas lista_Recetas = new lista_recetas();
                 lista_recetas listafavoritos = new lista_recetas();
                 lista_ing_rec = lista.lstrec;
-                recetas = cargar_recetas_fav(lista_Recetas);
+                cargar_recetas_fav(lista_Recetas);
                 cargar_cant();
                 string dificultad = "";
                 ordenar_por_filtro(lista_ing, dificultad, recetas, lista_ing_rec);
@@ -74,38 +74,71 @@ namespace Proyecto_Celiaco
             }
         }*/
 
-        public ObservableCollection<Receta> cargar_recetas_fav(lista_recetas pov)
+        public void cargar_recetas_fav(lista_recetas pov)
         {
-            ObservableCollection<Receta> resultado = new ObservableCollection<Receta>();
+            
             using (SqliteConnection db =
                    new SqliteConnection($"Filename={Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "proyectox.db3")}"))
             {
-                db.Open();
-                string comando = "select id_receta from RecetaFav where id_usuario="+devolverid(); //un ejemplo de select
-                SqliteCommand com = new SqliteCommand(comando, db);
-                int rowcount = 0;
-                rowcount = Convert.ToInt32(com.ExecuteScalar());
-                SqliteDataReader lector = com.ExecuteReader();
-                
+                try
+                {
+                    db.Open();
+                    string comando = "select id_receta from RecetaFav where id_usuario=" + devolverid(); //un ejemplo de select
+                    SqliteCommand com = new SqliteCommand(comando, db);
+                    int rowcount = 0;
+                    rowcount = Convert.ToInt32(com.ExecuteScalar());
+                    SqliteDataReader lector = com.ExecuteReader();
 
-                lector.Read();
-               
-                    for(int i=0;i<rowcount;i++)
+
+                    //lector.Read();
+                    if (!lector.Read())
                     {
-                        int id = Convert.ToInt32(lector.GetValue(i));
-                    //int id = Convert.ToInt32(lector["id_receta"].);
-
-                    DisplayAlert("prueba", id.ToString(), "suppeerr");
-                    DisplayAlert("SUUPAA", "deberia aparecer", "suppeerr");
-
-                    resultado.Add(pov.lstrec[id]);
-                    titulo.Text=id.ToString();
+                        titulo.Text = "No posee aun recetas favoritas";
                     }
+                    while (lector.Read())
+                    {
+                        int id=lector.GetInt32(0);
+                        int j = 0;
+                        while (j < pov.lstrec.Count)
+                        {
+                            if (pov.lstrec[j].receta_id == id)
+                            {
+                                recetas.Add(pov.lstrec[j]);
+                            }
+                            j++;
+                        }
+                        
+                    }
+                
+                    //for (int i = 0; i < rowcount; i++)
+                    //{
+                    //    int id = Convert.ToInt32(lector.GetValue(i));
+                    //    //int id = Convert.ToInt32(lector["id_receta"].);
+
+                    //    DisplayAlert("prueba", id.ToString(), "suppeerr");
+                    //    DisplayAlert("SUUPAA", "deberia aparecer", "suppeerr");
+
+                    //    int j = 0;
+                    //    while (j < pov.lstrec.Count)
+                    //    {
+                    //        if (pov.lstrec[j].receta_id == id)
+                    //        {
+                    //            recetas.Add(pov.lstrec[j]);
+                    //        }
+                    //        j++;
+                    //    }
+                    //    titulo.Text = id.ToString();
+                    //}
+                }
+                catch
+                {
+                    titulo.Text = "No posee aun recetas favoritas";
+                }
 
 
             }
 
-            return resultado;
+            
 
         }
 

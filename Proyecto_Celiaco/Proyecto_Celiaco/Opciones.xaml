@@ -10,10 +10,16 @@
                 HorizontalOptions="CenterAndExpand" FontSize="Title"/>
             <Label Text="EYYY BIENVENIDO" x:Name="labelnomusuario" HorizontalOptions="CenterAndExpand"  FontSize="Large" IsVisible="false"/>
             <Label Text="Pruebe a iniciar sesion!" x:Name="labelpruebe"  HorizontalOptions="CenterAndExpand" FontSize="Large"/>
-            <Button Text="Iniciar Sesión" x:Name="btniniciarsesion" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btniniciarsesion_Clicked"/>
-            <Button Text="Cerrar Sesion" x:Name="btncerrarsession" BackgroundColor="LightBlue" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btncerrarsession_Clicked" IsVisible="false" />
-            <Label x:Name="labelpregunta" Text="No tienes cuenta?" TextColor="White" FontSize="Medium" IsVisible="true" ></Label>
-            <Button Text="Registrarse" x:Name="btnregistro" BackgroundColor="LightBlue" IsVisible="true" VerticalOptions="CenterAndExpand" WidthRequest="60" Clicked="btnregistro_Clicked" />
+            <Frame  HasShadow="True" x:Name="fr_iniciar">
+            <Button Text="Iniciar Sesión" x:Name="btniniciarsesion" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" WidthRequest="80" Clicked="btniniciarsesion_Clicked"/>
+            </Frame>
+            <Frame  HasShadow="True" x:Name="fr_cerrar" VerticalOptions="CenterAndExpand">
+            <Button Text="Cerrar Sesion" x:Name="btncerrarsession" BackgroundColor="Transparent"  WidthRequest="1000" Clicked="btncerrarsession_Clicked" IsVisible="false" />
+            </Frame>
+            <Label x:Name="labelpregunta" Text="No tienes cuenta?" TextColor="DimGray" FontSize="Medium" IsVisible="true" HorizontalTextAlignment="Center" ></Label>
+            <Frame  HasShadow="True" x:Name="fr_reg">
+            <Button Text="Registrarse" x:Name="btnregistro" BackgroundColor="Transparent" IsVisible="true" VerticalOptions="CenterAndExpand" WidthRequest="80" Clicked="btnregistro_Clicked" />
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
